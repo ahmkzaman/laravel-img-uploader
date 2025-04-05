@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
@@ -12,3 +13,5 @@ Route::post('/image-upload', [ImageController::class, 'store'])
     ->name('image.store');
 Route::delete('/image-upload', [ImageController::class, 'destroy'])
     ->name('image.delete');
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
